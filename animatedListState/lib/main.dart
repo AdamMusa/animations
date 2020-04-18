@@ -12,6 +12,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool selected = false;
+  GlobalKey<AnimatedListState> listState = GlobalKey<AnimatedListState>();
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +20,18 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(),
       body:GestureDetector(
-        
-        ),
-      
+        child: AnimatedList(
+          key: listState,
+          itemBuilder: (BuildContext , int index,Animation)=>Container(
+            child: selected?Text('unselected'):Text('selected'),
+          ),
+          initialItemCount: 0,
+          scrollDirection: Axis.vertical,
+          reverse: true,
+          primary: true,
+          shrinkWrap: true,
+        )
+      ),
     );
   }
 }
