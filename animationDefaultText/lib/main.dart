@@ -19,7 +19,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(),
       body:GestureDetector(
-       
+       onTap: (){
+         setState(() {
+           selected = !selected;
+         });
+       },
+       child: AnimatedDefaultTextStyle(
+         child: selected?Text('unselected'):Center(child: Text('Selected'),),
+         style: TextStyle(
+           fontWeight:selected?FontWeight.bold:FontWeight.w800,
+           color: selected?Colors.redAccent:Colors.blue
+         ),
+         textAlign: selected?TextAlignVertical(y: 20.0):TextAffinity.downstream,
+         duration: Duration(seconds:3),
+         ),
       )
     );
   }
