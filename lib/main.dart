@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: selected?Alignment.center:Alignment.topLeft,
             duration: Duration(seconds:2),
             curve: Curves.fastOutSlowIn,
-            child: selected?FlutterLogo(size:75):FlutterLogo(size:100),
+            child: selected?FlutterLogo(size:75):FlutterLogo(size:150),
           ),
         )
       ) 
