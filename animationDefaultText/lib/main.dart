@@ -25,12 +25,22 @@ class _MyHomePageState extends State<MyHomePage> {
          });
        },
        child: AnimatedDefaultTextStyle(
-         child: selected?Text('unselected'):Center(child: Text('Selected'),),
+         child: selected?Container(
+           child: Text('unselected'),
+           color:Colors.grey,
+           width: selected?300:300,
+           height: selected?100:100,
+           ):Center(child: Container(
+             child: Text('Selected'),
+             color:Colors.blue,
+            width: selected?300:300,
+            height: selected?100:100,
+             ),),
          style: TextStyle(
            fontWeight:selected?FontWeight.bold:FontWeight.w800,
-           color: selected?Colors.redAccent:Colors.blue
+           color: selected?Colors.redAccent:Colors.white,
          ),
-         textAlign: selected?TextAlignVertical(y: 20.0):TextAffinity.downstream,
+         textAlign: selected?TextAlign.center:TextAlign.justify,
          duration: Duration(seconds:3),
          curve: selected?Curves.bounceInOut:Curves.easeInBack,
          ),
