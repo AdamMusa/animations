@@ -32,6 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
          ),
          textAlign: selected?TextAlignVertical(y: 20.0):TextAffinity.downstream,
          duration: Duration(seconds:3),
+         curve: selected?Curves.bounceInOut:Curves.easeInBack,
          ),
       )
     );
