@@ -20,6 +20,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(),
       body:GestureDetector(
+        onTap: (){
+          setState(() {
+            selected = !selected;
+          });
+        },
         child: AnimatedList(
           key: listState,
           itemBuilder: (BuildContext , int index,Animation)=>Container(
